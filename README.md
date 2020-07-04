@@ -2,7 +2,7 @@
 gradebook web app
 Hello,
 
-I have created a web application called CS50 Gradebook. I am currently a teacher, so a gradebook was the most "useful" tool I could think to created.
+I have created a web application called CS50 Gradebook. 
 
 The Gradebook web app allows you first of all to register using a username, subject and a password.
 
