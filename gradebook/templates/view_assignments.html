@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Select Class
+{% endblock %}
+
+{% block main %}
+    <form action="/view_assignments" method="post">
+     <div class="form-group">
+        <select class="form-control" name="class_name">
+          <option value="" disabled selected hidden>Class Name</option>
+          {% for line in lines %}
+          <option>{{ line["class_name"] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

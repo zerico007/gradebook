@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>My Classes</h1>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Class Name</th>
+      <th scope="col">Class Size</th>
+    </tr>
+  </thead>
+      {% for i in range(counts) %}
+      <tr>
+          <td>{{ lines[i]["class_name"] }}</td>
+          <td>{{ student_counts[i] }}</td>
+      </tr>
+      {% endfor %}
+  <tbody>
+     </table>
+
+{% endblock %}

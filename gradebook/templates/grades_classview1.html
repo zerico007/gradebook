@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Grades By Class
+{% endblock %}
+
+{% block main %}
+<h2> {{ class_name }}</h2>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Student Name</th>
+      {% for a in assignments %}
+      <th scope="col">{{ a["assignment_title"] }}({{ a["assignment_type"] }})</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+      {% for student in students %}
+      <tr>
+          <td>{{ student["student_name"] }}</td>
+          <td>{{ student["grade"] }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+ </table>
+{% endblock %}

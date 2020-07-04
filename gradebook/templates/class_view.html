@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Class
+{% endblock %}
+
+{% block main %}
+<h1> {{ class_name }}</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for row in rows %}
+      <tr>
+          <td>{{ row["student_name"] }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+ </table>
+{% endblock %}

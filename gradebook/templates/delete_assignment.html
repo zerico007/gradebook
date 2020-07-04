@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Assignment
+{% endblock %}
+
+{% block main %}
+<form action="/delete_assignment" method="post">
+     <div class="form-group">
+        <select class="form-control" name="class_name">
+          <option value="" disabled selected hidden>Class Name</option>
+          {% for line in lines %}
+          <option>{{ line["class_name"] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="assignment_type">
+          <option value="" disabled selected hidden>Assignment Type</option>
+          <option>Homework</option>
+          <option>Classwork</option>
+          <option>Test</option>
+        </select>
+      </div>
+       <div class="form-group">
+        <select class="form-control" name="assignment_title">
+          <option value="" disabled selected hidden>Assignment Title</option>
+          {% for assignment in assignments %}
+          <option>{{ assignment["assignment_title"] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

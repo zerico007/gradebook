@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Class
+{% endblock %}
+
+{% block main %}
+    <form action="/create_class" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="class_name" placeholder="Class Name" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

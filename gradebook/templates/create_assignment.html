@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Class
+{% endblock %}
+
+{% block main %}
+   <form action="/create_assignment" method="post">
+     <div class="form-group">
+        <select class="form-control" name="class_name">
+          <option value="" disabled selected hidden>Class Name</option>
+          {% for line in lines %}
+          <option>{{ line["class_name"] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="assignment_type">
+          <option value="" disabled selected hidden>Assignment Type</option>
+          <option>Homework</option>
+          <option>Classwork</option>
+          <option>Test</option>
+        </select>
+      </div>
+      <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="assignment_title" placeholder="Assignment Title" type="text">
+        </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

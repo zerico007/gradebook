@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Enter Grades
+{% endblock %}
+
+{% block main %}
+<h2> {{ class_name }}</h2>
+<h3>{{ assignment_title }}</h3>
+<h4>{{ assignment_type }}</h4>
+<form action="/enter_grades" method="post">
+<div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Student Name</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for row in rows %}
+      <tr>
+          <td>{{ row["student_name"] }}</td>
+          <td><input autocomplete="off" autofocus class="form-control" name="grade" placeholder="Grade" type="text" max="100" min="0"></td>
+      </tr>
+      {% endfor %}
+  </tbody>
+ </table>
+ </div>
+ <button class="btn btn-primary" type="submit">Save</button>
+</form>
+{% endblock %}

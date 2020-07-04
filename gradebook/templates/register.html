@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+        <select class="form-control" name="subject">
+          <option value="" disabled selected hidden>Select Subject</option>
+          <option>Biology</option>
+          <option>Chemistry</option>
+          <option>Physics</option>
+          <option>Mathematics</option>
+          <option>English Language</option>
+          <option>English Literature</option>
+          <option>Spanish</option>
+          <option>French</option>
+          <option>History</option>
+          <option>Social Studies</option>
+          <option>Principles of Accounts</option>
+          <option>Economics</option>
+          <option>Visual Arts</option>
+          <option>Music</option>
+          <option>Information Technology</option>
+         </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}
